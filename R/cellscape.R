@@ -936,7 +936,7 @@ getChromBounds <- function(chroms, cnv_data) {
 
   # get min & max for each chromosome
   chrom_bounds = sapply(chroms, function(chrom) {
-    chrom_cnv_data <- cnv_data[which(cnv_data$chr == chrom),]
+    chrom_cnv_data <- cnv_data[which(cnv_data$chr == chrom),,drop = FALSE]
     start <- min(chrom_cnv_data$start)
     end <- max(chrom_cnv_data$end)
     return(c(chrom=chrom, bp_start=start, bp_end=end))
